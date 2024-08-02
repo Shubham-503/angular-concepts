@@ -1,1 +1,11 @@
-<p appHighlight="red">Hover to highlight using custom directive</p>
+<p [appHighlight]="'red'" [defaulColor]="'green'">
+  Hover to highlight using custom directive
+</p>
+
+<div *appUnless="false">This text is displayed when isVisible is false.</div>
+
+<ng-template #template>
+  <p>template example</p>
+</ng-template>
+
+<p appTooltip="This is a tooltip">Hover for tooltip</p>

@@ -10,6 +10,7 @@ import {
   selector: '[appHighlight]',
 })
 export class HighlightDirective {
+  @Input() defaulColor!: string;
   @Input('appHighlight') highlightColor: any = 'yellow';
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
@@ -21,7 +22,7 @@ export class HighlightDirective {
 
   @HostListener('mouseleave')
   onMouseLeave() {
-    this.highlight(null);
+    this.highlight(this.defaulColor);
   }
 
   private highlight(color: string | null) {
