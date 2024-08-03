@@ -9,3 +9,23 @@
 </ng-template>
 
 <p appTooltip="This is a tooltip">Hover for tooltip</p>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Username</label>
+    <input id="username" formControlName="username" />
+    <div
+      *ngIf="
+        form.controls['username'].invalid && form.controls['username'].touched
+      "
+    >
+      <div *ngIf="form.controls['username'].errors?.required">
+        Username is required.
+      </div>
+      <div *ngIf="form.controls['username'].errors?.pattern">
+        Username must be alphanumeric.
+      </div>
+    </div>
+  </div>
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
