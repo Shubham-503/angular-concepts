@@ -8,6 +8,10 @@ import { UnlessDirective } from './directives/unless.directive';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { PatternValidatorDirective } from './directives/pattern-validator.directive';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +20,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     UnlessDirective,
     TooltipDirective,
     PatternValidatorDirective,
+    PipesDemoComponent,
+    ReversePipe,
+    TruncatePipe,
+    TimeAgoPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

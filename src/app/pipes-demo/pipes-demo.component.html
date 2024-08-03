@@ -1,0 +1,21 @@
+<p>pipes-demo works!</p>
+
+<p>Current Date: {{ today | date : "fullDate" }}</p>
+<p>Current Time: {{ today | date : "shortTime" }}</p>
+<p>Current Date: {{ today | date : "dd/MM/yyyy" }}</p>
+<p>Price: {{ price | currency : "USD" }}</p>
+<p>Percentage: {{ percentage | percent }}</p>
+
+<p>Original Message: {{ message }}</p>
+<p>Reversed Message using custom reverse pipe: {{ message | reverse }}</p>
+
+<p>Async Message {{ AsyncMessage$ | async }}</p>
+
+<p>Truncated long message to 20 char: {{ longMessage | truncate : 20 }}</p>
+
+<ul>
+  <li *ngFor="let timeAgo of events | timeAgo">
+    {{ timeAgo }}
+  </li>
+</ul>
+<button (click)="addEvent()">Add Event</button>
