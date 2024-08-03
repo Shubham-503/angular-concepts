@@ -20,10 +20,7 @@ export class AppComponent implements AfterViewInit {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      username: [
-        '',
-        [Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')],
-      ],
+      username: ['', [Validators.required]],
     });
   }
 

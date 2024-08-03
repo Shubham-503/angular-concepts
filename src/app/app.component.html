@@ -13,7 +13,11 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
     <label for="username">Username</label>
-    <input id="username" formControlName="username" />
+    <input
+      id="username"
+      formControlName="username"
+      appPatternValidator="^[a-zA-Z0-9]+$"
+    />
     <div
       *ngIf="
         form.controls['username'].invalid && form.controls['username'].touched
@@ -27,5 +31,6 @@
       </div>
     </div>
   </div>
+
   <button type="submit" [disabled]="form.invalid">Submit</button>
 </form>
